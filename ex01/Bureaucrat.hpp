@@ -6,18 +6,20 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:31:51 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/07 23:28:57 by lomont           ###   ########.fr       */
+/*   Updated: 2025/12/07 23:26:45 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #ifndef BUREAUCRAT_HPP
-#define	BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <exception>
 #include <string>
+
+class Form;
 
 class Bureaucrat
 {
@@ -54,6 +56,10 @@ class Bureaucrat
 
 		const std::string& 	getName( void ) const;
 		int 				getGrade( void ) const;
+
+		//Sign form
+
+		void signForm(Form& f);
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& c);

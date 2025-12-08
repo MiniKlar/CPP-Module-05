@@ -6,11 +6,12 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:31:53 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/08 00:08:07 by lomont           ###   ########.fr       */
+/*   Updated: 2025/12/08 01:35:28 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 //Definition of GradeTooHigh & TooLow class
 
@@ -78,7 +79,7 @@ void Bureaucrat::IncrementGrade( void ) {
 
 void Bureaucrat::DecrementeGrade( void ) {
 	if ((_grade + 1) > 150)
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 	_grade++;
 	return ;
 }
@@ -100,3 +101,40 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat& c) {
 	return (os);
 }
 
+//Function to sign the Form
+
+void Bureaucrat::signForm(AForm& f) {
+	try
+	{
+		f.beSigned((*this));
+		std::cout << getName() << " signed " << f.getName() << "." << std::endl;
+	}
+	catch(const AForm::GradeTooLowException& e) {
+		std::cerr << getName() << " couldn't sign " << f.getName() << " because " << getName() << " has a grade too low to sign the form." << '\n';
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+	return ;
+}
+
+//Function to execute the Form
+
+void Bureaucrat::executeForm(AForm const & form) const {
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch(const Bureaucrat::GradeTooLowException& e) {
+		std::cout << e.what() << std::endl;
+	}
+	catch(const AForm::FormNotSigned& e) {
+		std::cout << e.what() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	return ;
+}
