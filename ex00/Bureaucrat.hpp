@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:31:51 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/07 23:28:57 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/02 16:39:52 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class Bureaucrat
 		//Incrementation & decrementation
 
 		void	IncrementGrade( void );
-		void	DecrementeGrade( void );
+		void	DecrementGrade( void );
 
 		//Getters
 

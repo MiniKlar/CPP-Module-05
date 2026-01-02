@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:31:53 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/08 00:08:07 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/02 16:54:35 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ void Bureaucrat::IncrementGrade( void ) {
 	return ;
 }
 
-void Bureaucrat::DecrementeGrade( void ) {
+void Bureaucrat::DecrementGrade( void ) {
 	if ((_grade + 1) > 150)
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 	_grade++;
 	return ;
 }
