@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:31:55 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/08 02:49:09 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/04 10:42:47 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@
 int main(void) {
 	Intern feur;
 	AForm* formCreated;
-	formCreated = feur.makeForm("robotomy request ", "Alban");
+	formCreated = feur.makeForm("robotomy request", "Alban");
+	Bureaucrat a("Me", 45);
+	std::cout << a << std::endl << *formCreated << std::endl;
+	a.signForm(*formCreated);
+	a.executeForm(*formCreated);
 	delete formCreated;
 	return 0;
 }
