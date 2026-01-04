@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 12:03:23 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/07 23:26:21 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/02 16:57:19 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Form
 	private:
 		const std::string	_name;
 		bool				_signed;
-		int	const			_gradeToSign;
-		int	const			_gradeToExec;
+		const int			_gradeToSign;
+		const int			_gradeToExec;
 	public:
 		class GradeTooHighException : public std::exception {
 			public:

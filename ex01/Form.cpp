@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 12:03:20 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/07 21:53:53 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/02 16:59:03 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Form& Form::operator=(const Form& other) {
 	if (&other != this) {
 		this->_signed = other._signed;
 	}
-	return *this;
+	return ( *this );
 }
 
 Form::~Form( void ) {
@@ -63,19 +63,19 @@ Form::~Form( void ) {
 //Definition of getters
 
 const std::string& Form::getName( void ) const {
-	return (_name);
+	return ( _name );
 }
 
 bool Form::getSigned( void ) const {
-	return (_signed);
+	return ( _signed );
 }
 
 int Form::getGradeSign( void ) const {
-	return (_gradeToSign);
+	return ( _gradeToSign );
 }
 
 int Form::getGradeExec( void ) const {
-	return (_gradeToExec);
+	return ( _gradeToExec );
 }
 
 //Definition of the signing function
